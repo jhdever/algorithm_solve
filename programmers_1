@@ -1,0 +1,16 @@
+def solution(myStr):
+    answer = []
+    str_split = ['a', 'b', 'c']
+    word = ''
+    for s in myStr:
+        if s in str_split:
+            if word:
+                answer.append(word)
+                word = ''
+            else:
+                continue
+        else:
+            word += s
+    if word:
+        answer.append(word)
+    return answer if answer else [ 'EMPTY']
